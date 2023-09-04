@@ -22,8 +22,8 @@ stopwords_set = set(stopwords_temp)
 import string
 punc_list = list(string.punctuation)
 
-import spacy
-nlp = spacy.load("en_core_web_sm")
+# import spacy
+# nlp = spacy.load("en_core_web_sm")
 
 import unicodedata
 
@@ -58,8 +58,8 @@ class PredictEmotionFromTextCNN:
         word_splitted = [word.lower() for word in word_splitted] # lowercase
         word_splitted = [word for word in word_splitted if word not in punc_list and word not in stopwords_set]
         text_new = " ".join(word_splitted)
-        doc = nlp(text_new)
-        text_new = [token.lemma_ for token in doc] # lemmatization
+        # doc = nlp(text_new)
+        # text_new = [token.lemma_ for token in doc] # lemmatization
         text_new = [token.lower() for token in text_new]
         return " ".join(text_new)
     
